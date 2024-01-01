@@ -7,7 +7,10 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost:27017/signin');
+mongoose.connect('mongodb+srv://admin:wasiawan@cluster0.tz4yg0e.mongodb.net/?retryWrites=true&w=majority')
+.then(()=>{
+  console.log("connection made successfully")
+});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
